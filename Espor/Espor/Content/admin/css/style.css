@@ -1,0 +1,54 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: linear-gradient(120deg, white, #00babc);
+    min-height: 100vh;
+}
+
+.container{
+    width: 400px;
+    height: 400px;
+    background: white;
+    padding: 80px 40px;
+    border-radius: 15px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.textbox{
+    border-bottom: 2px solid #adadad;
+    position: relative;
+    margin: 10px 0;
+}
+
+.textbox input{
+    font-size: 15px;
+    color: black;
+    border: none;
+    width: 100%;
+    outline: none;
+    background: none;
+    padding: 0 5px;
+    height: 40px;
+}
+
+.loginBtn {
+    display: block;
+    width: 100px;
+    height: 50px;
+    margin-top: 30px;
+    border: none;
+    background-color: #00babc;
+    color: white;
+    outline: none;
+    cursor: pointer;
+    border-radius: 10px;
+}

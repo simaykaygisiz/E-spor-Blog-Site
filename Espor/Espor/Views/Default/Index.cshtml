@@ -1,0 +1,48 @@
+﻿@model List <Espor.Models.blog >
+@{
+    ViewBag.Title = "Ana Sayfa";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<header class="masthead" style="background-image: url('Content/assets/img/1.jpg')">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="site-heading">
+                    <h1>Hoşgeldiniz</h1>
+                    <span class="subheading">E-sporla ilgili ilginizi çekecek yazılar burada..</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7">
+
+            <hr class="my-4" />
+
+            @foreach (var blog in Model)
+            {
+
+                <div class="post-preview">
+                    <a href="#">
+                        <h2 class="post-title">@blog.title</h2>
+                        <p>@blog.content</p>
+                        @Html.ActionLink("Detay","BlogDetay", new {ID = blog.ID}, new {@class="btn btn-info"})
+                    </a>
+
+                </div>
+
+                <hr class="my-4" />
+
+            }
+
+        </div>
+    </div>
+</div>
+
+
+

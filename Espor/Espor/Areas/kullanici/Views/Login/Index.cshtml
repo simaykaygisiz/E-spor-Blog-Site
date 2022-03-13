@@ -1,0 +1,54 @@
+﻿@model Espor.Models.admin
+@{
+    ViewBag.Title = "Admin Panel Login";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/admin/css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+    
+    <div class="container">
+
+        <div class="login-form">
+
+            <h2>Admin Login</h2>
+
+            @using (Html.BeginForm("Alogin", "login", new { FormMethod.Post }))
+            {
+
+                <div class="textbox">
+                    @Html.TextBoxFor(m => m.username, new { @class = "textbox", placeholder = "Kullanıcı Adı" })
+
+                </div>
+                @Html.ValidationMessageFor(m => m.username);
+                <div class="textbox">
+                    @Html.PasswordFor(m => m.password, new { @class = "textbox", placeholder = "Şifre" })
+                </div>
+                @Html.ValidationMessageFor(m => m.password);
+                <input type="submit" class="loginBtn" value="Login" />
+
+            }
+
+            @if (ViewBag.Hata != null)
+            {
+                <div class="alert alert-danger">
+                    @ViewBag.Hata
+                </div>
+            }
+
+        </div>
+
+    </div>
+    
+</body>
+</html>
